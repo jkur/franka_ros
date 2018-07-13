@@ -49,7 +49,7 @@ FrankaHW::FrankaHW(const std::array<std::string, 7>& joint_names,
 
   if (node_handle.hasParam("robot_description")) {
     urdf::Model urdf_model;
-    if (!urdf_model.initParamWithNodeHandle("robot_description", node_handle)) {
+    if (!urdf_model.initParam("robot_description")) {
       ROS_ERROR("FrankaHW: Could not initialize urdf model from robot_description");
     } else {
       joint_limits_interface::SoftJointLimits soft_limits;
